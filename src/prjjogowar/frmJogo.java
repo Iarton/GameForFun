@@ -471,7 +471,6 @@ public class frmJogo extends javax.swing.JFrame {
 
         if (Life1 <= 0) {
             JOptionPane.showMessageDialog(null, "O Player 2 Venceu");
-            frmJogo.DISPOSE_ON_CLOSE(0);
         }
         btnAtack1.setEnabled(true);
         btnRep1.setEnabled(true);
