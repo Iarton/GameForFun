@@ -39,6 +39,16 @@ public class frmMenu extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         getContentPane().setBackground(Color.ORANGE);
     }
+
+    public ClassOpt getOpt() {
+        return opt;
+    }
+
+    public void setOpt(ClassOpt opt) {
+        this.opt = opt;
+    }
+    
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
