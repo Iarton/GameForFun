@@ -96,7 +96,6 @@ public class frmOpt extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-        System.out.println(meio1);
     }//GEN-LAST:event_formWindowClosed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
@@ -112,7 +111,6 @@ public class frmOpt extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       name1 = NamePlay1.getText();
       menupr.getOpt().setName1(name1);
-        System.out.println(name1);
       JOptionPane.showMessageDialog(null, "Changes Saved");
     }//GEN-LAST:event_jButton1ActionPerformed
 

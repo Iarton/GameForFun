@@ -124,10 +124,9 @@ public class frmMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJogarActionPerformed
-        System.out.println(opt.getName1());
-        frmJogo f = new frmJogo(opt);
+        frmJogo f = new frmJogo(opt,this);
         f.setVisible(true);
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_btnJogarActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed

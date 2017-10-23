@@ -17,18 +17,14 @@ public class frmJogo extends javax.swing.JFrame {
     int Life1 = 100, Life2 = 100;
     int total1, total2, action1 = 5, action2 = 5;
     String Life1t, Pname1; 
-    ClassOpt opt;
-
-    // * Creates new form frmJogo
-    //*/
-    public frmJogo(ClassOpt opt) {
+    frmMenu menut;
+    public frmJogo(ClassOpt opt, frmMenu menut) {
         initComponents();
         setLocationRelativeTo(null);
+        this.menut=menut;
         getContentPane().setBackground(Color.YELLOW);
-        this.opt = opt;
-        Pname1 = opt.getName1();
+        Pname1 = menut.getOpt().getName1();
         PlayName1.setText(Pname1);
-        System.out.println(Pname1);
         
     }
 
@@ -551,7 +547,6 @@ public class frmJogo extends javax.swing.JFrame {
             action1 = action1 - 1;
             this.jLabel7.setText(""+action1);
         }
-        System.out.println(+Life1 + ", " + randomNum);
           }
         if (Life1 <= 0) {
             JOptionPane.showMessageDialog(null, "O Player 2 Venceu");
@@ -638,7 +633,6 @@ public class frmJogo extends javax.swing.JFrame {
             action2 = action2 - 1;
             this.jLabel8.setText(""+action2);
         }
-        System.out.println(+Life2 + ", " + randomNum);
        }
         if (Life2 <= 0) {
             JOptionPane.showMessageDialog(null, "O Player 1 Venceu");
@@ -800,10 +794,9 @@ public class frmJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_formMouseEntered
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        // TODO add your handling code here:
-        frmMenu menu = new frmMenu();
-        menu.setVisible(true);
+        
         this.dispose();
+        menut.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
 
     /**
@@ -836,7 +829,6 @@ public class frmJogo extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmJogo(new ClassOpt()).setVisible(true);
             }
         });
     }
