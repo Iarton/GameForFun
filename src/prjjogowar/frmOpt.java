@@ -38,11 +38,12 @@ public class frmOpt extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         NamePlay1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -56,39 +57,45 @@ public class frmOpt extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Save Changes");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, -1, -1));
-
-        NamePlay1.setText("Player 1 Name");
-        NamePlay1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NamePlay1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(NamePlay1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 110, 20));
-        NamePlay1.getAccessibleContext().setAccessibleName("NamePlay1");
-
-        jLabel1.setFont(new java.awt.Font("Verdana", 3, 24)); // NOI18N
-        jLabel1.setText("Changelog");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
-
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setAutoscrolls(true);
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(1);
         jTextArea1.setRows(1);
-        jTextArea1.setText("* Version 1.0   Release  \n* Version 1.1   Add Results, fix bugs\n* Version 1.2   Add Action points system, fix bugs\n* Version 1.3   Improved AP System, fix bugs\n* Version 1.4   Add Charge atack \n* Version 1.4.1 Windows centralizad\n* Version 1.4.2 Layout Improvement,put more bugs... :c\n* Version 1.4.3 FIX BUGS!!! and now AP never be less than 0\n* Version 1.5   Add Menu, fix bug\n* Version 1.5.1 Improved Results, Improved Atack and Repair, add Hp Bar\n* Version 1.5.2 Add images on Menus, fix bugs\n* Version 1.5.3 Reduce Charge health cost, fix bugs\n* Version 1.5.4 Fix bugs menu related, improved menu");
-        jTextArea1.setSelectionStart(0);
+        jTextArea1.setText("* Version 1.0   Release  \n* Version 1.1   Add Results, fix bugs\n* Version 1.2   Add Action points system, fix bugs\n* Version 1.3   Improved AP System, fix bugs\n* Version 1.4   Add Charge atack \n* Version 1.4.1 Windows centralizad\n* Version 1.4.2 Layout Improvement, add bugs(ops)\n* Version 1.4.3 Fix some bugs and now AP will never be less than 0\n* Version 1.5 Add Menu, fix bug\n* Version 1.5.1 Improved Results, Improved Atack and Repair, add Hp Bar\n* Version 1.5.2 Add images on Menus, fix bugs\n* Version 1.5.3 Reduce Charge health cost, fix bugs\n* Version 1.5.4 Fix bugs menu related, improved menu");
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 47, 460, 130));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 460, 130));
 
+        jButton1.setText("Save Changes");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, -1, -1));
+
+        NamePlay1.setText("Player 1");
+        NamePlay1.setMargin(new java.awt.Insets(0, 4, 0, 0));
+        NamePlay1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NamePlay1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(NamePlay1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 120, 30));
+        NamePlay1.getAccessibleContext().setAccessibleName("NamePlay1");
+
+        jLabel1.setFont(new java.awt.Font("Verdana", 3, 24)); // NOI18N
+        jLabel1.setText("Changelog");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 255, 0));
+        jLabel3.setText("Name Player 1");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+
+        jLabel2.setForeground(new java.awt.Color(51, 255, 0));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMGS/atack3.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 280));
 
@@ -119,6 +126,7 @@ public class frmOpt extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
