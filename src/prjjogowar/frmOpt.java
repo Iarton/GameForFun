@@ -111,7 +111,7 @@ public class frmOpt extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       name1 = NamePlay1.getText();
-      menupr.opt.setName1(name1);
+      menupr.getOpt().setName1(name1);
         System.out.println(name1);
       JOptionPane.showMessageDialog(null, "Changes Saved");
     }//GEN-LAST:event_jButton1ActionPerformed
