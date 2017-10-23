@@ -32,18 +32,13 @@ public class frmMenu extends javax.swing.JFrame {
     /**
      * Creates new form frmMenu
      */
-    ClassOpt opt;
-    frmMenu menu;
+    private ClassOpt opt;
     public frmMenu() {
         initComponents();
         opt = new ClassOpt();
-        menu=this;
-        setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);
         getContentPane().setBackground(Color.ORANGE);
     }
-    
-   
-    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -133,7 +128,7 @@ public class frmMenu extends javax.swing.JFrame {
     private void btnOptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOptActionPerformed
         // TODO add your handling code here:
         
-        frmOpt MOpt = new frmOpt(opt,menu);
+        frmOpt MOpt = new frmOpt(opt,this);
         opt.setName1("Carol");
         MOpt.setVisible(true);
         this.setVisible(false);
