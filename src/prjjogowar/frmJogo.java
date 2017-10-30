@@ -11,6 +11,7 @@ import java.util.Random;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import model.ClassOpt;
+import model.FunctionGame;
 
 
 public class frmJogo extends javax.swing.JFrame {
@@ -20,6 +21,7 @@ public class frmJogo extends javax.swing.JFrame {
     int total1, total2, action1 = 5, action2 = 5;
     String Life1t, Pname1;
     frmMenu menut;
+    FunctionGame fg = new FunctionGame();
     public frmJogo(ClassOpt opt, frmMenu menut) {
         initComponents();
         setLocationRelativeTo(null);
@@ -247,17 +249,13 @@ public class frmJogo extends javax.swing.JFrame {
                         .addGap(135, 135, 135)
                         .addComponent(jLabel4)
                         .addGap(58, 58, 58)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(lblVida1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(PlayName1))
-                        .addGap(336, 336, 336)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(PlayName2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(lblVida2)))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(PlayName1, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                            .addComponent(lblVida1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(299, 299, 299)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(PlayName2, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                            .addComponent(lblVida2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -356,32 +354,9 @@ public class frmJogo extends javax.swing.JFrame {
         pgsVida2.setValue(Life2);
         this.lblVida2.setText("" + Life2);
         //Aki result
-        if (randomNum >= 100) {
-            this.Result1.setText("Full Nation Strike");
-        }
-        if (randomNum >= 98 && randomNum < 100) {
-            this.Result1.setText("Biologic Weapon");
-        }
-        if (randomNum >= 90 && randomNum < 98) {
-            this.Result1.setText("Full Army Strike");
-        }
-        if(randomNum >= 80 && randomNum <=89) {
-            this.Result1.setText("Strategic Atack");
-        }
-        if (randomNum >= 60 && randomNum <= 79) {
-            this.Result1.setText("Army Atack");
-        }
-        if (randomNum >= 30 && randomNum <= 59) {
-            this.Result1.setText("Infantary Rush");
-        }
-        if (randomNum >= 10 && randomNum <= 29) {
-            this.Result1.setText("Recon Atack");
-        }
-        if (randomNum >= 1 && randomNum <= 9) {
-            this.Result1.setText("Small Troop Atack");
-        }
+        this.Result1.setText(fg.resultadoAtack(randomNum));
+        
         if (randomNum == 0) {
-            this.Result1.setText("INSURGENCY!(Enemy Ap +1)");
             action2 = action2 + 1;
             this.jLabel8.setText(""+action2);
         }
@@ -437,33 +412,9 @@ public class frmJogo extends javax.swing.JFrame {
         Life1 = Life1 - randomNum;
         pgsVida1.setValue(Life1);
         this.lblVida1.setText("" + Life1);
-        //Aki Result
-        if (randomNum >= 100) {
-            this.Result2.setText("Full Nation Strike");
-        }
-        if (randomNum >= 98 && randomNum < 100) {
-            this.Result2.setText("Biologic Weapon");
-        }
-        if (randomNum >= 90 && randomNum < 98) {
-            this.Result2.setText("Full Army Strike");
-        }
-        if(randomNum >= 80 && randomNum <=89) {
-            this.Result2.setText("Strategic Atack");
-        }
-        if (randomNum >= 60 && randomNum <= 79) {
-            this.Result2.setText("Army Atack");
-        }
-        if (randomNum >= 30 && randomNum <= 59) {
-            this.Result2.setText("Infantary Rush");
-        }
-        if (randomNum >= 10 && randomNum <= 29) {
-            this.Result2.setText("Recon Atack");
-        }
-        if (randomNum >= 1 && randomNum <= 9) {
-            this.Result2.setText("Small Troop Atack");
-        }
+        Result2.setText(fg.resultadoAtack(randomNum));
+       
         if (randomNum == 0) {
-            this.Result2.setText("INSURGENCY!(Enemy Ap +1)");
             action1 = action1 + 1;
             this.jLabel7.setText(""+action1);
         }
@@ -515,40 +466,12 @@ public class frmJogo extends javax.swing.JFrame {
         }else{
         Life1 = Life1 + randomNum;
         pgsVida1.setValue(Life1);
+        
         this.lblVida1.setText("" + Life1);
-        //Aki result
-        if (randomNum <= 50 && randomNum >=48 ) {
-            this.Result1.setText("Master Chief Work");
-        } 
-        if (randomNum <= 41 && randomNum >= 47 ) {
-            this.Result1.setText("Chief Work");
-        }
-        if (randomNum <= 40 && randomNum >= 31) {
-            this.Result1.setText("Art Chief Work");
-        }
-        if (randomNum <= 30 && randomNum >= 21) {
-            this.Result1.setText("Master Enginner");
-        }
-        if (randomNum <= 29 && randomNum >= 20) {
-            this.Result1.setText("Engenner");
-        }
-        if (randomNum <= 19 && randomNum >= 10) {
-            this.Result1.setText("Rebuild");
-        }
-        if (randomNum <= 9 && randomNum >= 1) {
-            this.Result1.setText("Repair");
-        }
-        if (randomNum == 0) {
-            this.Result1.setText("No one to Repair");
-        }
-        if (randomNum <= -1 && randomNum >= -9) {
-            this.Result1.setText("Incident on Repair");
-        }
-        if (randomNum <= -10 && randomNum >= -18) {
-            this.Result1.setText("Acidental Explosion");
-        }
+       
+        this.Result1.setText(fg.resultRepair(randomNum));
+        
         if (randomNum <= -19 && randomNum >= -20) {
-            this.Result1.setText("Shit Goes Down(AP -1)");
             action1 = action1 - 1;
             this.jLabel7.setText(""+action1);
         }
@@ -603,38 +526,9 @@ public class frmJogo extends javax.swing.JFrame {
         pgsVida2.setValue(Life2);
         this.lblVida2.setText("" + Life2);
         //aki result
-       if (randomNum <= 50 && randomNum >=48 ) {
-            this.Result2.setText("Master Chief Work");
-        } 
-        if (randomNum <= 41 && randomNum >= 47 ) {
-            this.Result2.setText("Chief Work");
-        }
-        if (randomNum <= 40 && randomNum >= 31) {
-            this.Result2.setText("Art Chief Work");
-        }
-        if (randomNum <= 30 && randomNum >= 21) {
-            this.Result2.setText("Master Enginner");
-        }
-        if (randomNum <= 29 && randomNum >= 20) {
-            this.Result2.setText("Engenner");
-        }
-        if (randomNum <= 19 && randomNum >= 10) {
-            this.Result2.setText("Rebuild");
-        }
-        if (randomNum <= 9 && randomNum >= 1) {
-            this.Result2.setText("Repair");
-        }
-        if (randomNum == 0) {
-            this.Result2.setText("No one to Repair");
-        }
-        if (randomNum <= -1 && randomNum >= -9) {
-            this.Result2.setText("Incident on Repair");
-        }
-        if (randomNum <= -10 && randomNum >= -18) {
-            this.Result2.setText("Acidental Explosion");
-        }
+       this.Result2.setText(fg.resultRepair(randomNum));
+       
         if (randomNum <= -19 && randomNum >= -20) {
-            this.Result2.setText("Shit Goes Down(AP -1)");
             action2 = action2 - 1;
             this.jLabel8.setText(""+action2);
         }
@@ -788,14 +682,6 @@ public class frmJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCharge2ActionPerformed
 
     private void formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseEntered
-        // TODO add your handling code here:
-        ClassOpt opt = new ClassOpt();
-        int vidaDef;
-        vidaDef = opt.getVidaP1();
-        System.out.println(vidaDef);
-        if(vidaDef > 0){
-        lblVida1.setText(String.valueOf(vidaDef));
-        }
     }//GEN-LAST:event_formMouseEntered
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
