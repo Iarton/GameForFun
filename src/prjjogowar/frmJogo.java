@@ -6,6 +6,7 @@
 package prjjogowar;
 
 import java.awt.Color;
+import java.awt.SystemColor;
 import java.util.Random;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -14,18 +15,22 @@ import model.ClassOpt;
 
 public class frmJogo extends javax.swing.JFrame {
 
-    int Life1 = 100, Life2 = 100;
+    int Life1;
+    int Life2;
     int total1, total2, action1 = 5, action2 = 5;
-    String Life1t, Pname1; 
+    String Life1t, Pname1;
     frmMenu menut;
     public frmJogo(ClassOpt opt, frmMenu menut) {
         initComponents();
         setLocationRelativeTo(null);
-        this.menut=menut;
         getContentPane().setBackground(Color.YELLOW);
-        Pname1 = menut.getOpt().getName1();
-        PlayName1.setText(Pname1);
-        
+        this.menut = menut;
+        PlayName1.setText(menut.getOpt().getName1());
+        PlayName2.setText(menut.getOpt().getName2());
+        Life1 = (menut.getOpt().getVidaP1());
+        Life2 = (menut.getOpt().getVidaP2());
+        lblVida1.setText(String.valueOf(Life1));
+        lblVida2.setText(String.valueOf(Life2));
     }
 
     @SuppressWarnings("unchecked")
@@ -37,7 +42,7 @@ public class frmJogo extends javax.swing.JFrame {
         lblVida1 = new javax.swing.JLabel();
         lblVida2 = new javax.swing.JLabel();
         PlayName1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        PlayName2 = new javax.swing.JLabel();
         btnRep1 = new javax.swing.JButton();
         btnRep2 = new javax.swing.JButton();
         Action1 = new javax.swing.JLabel();
@@ -107,8 +112,8 @@ public class frmJogo extends javax.swing.JFrame {
         PlayName1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
         PlayName1.setText("Player 1");
 
-        jLabel2.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
-        jLabel2.setText("Player 2");
+        PlayName2.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
+        PlayName2.setText("Player 2");
 
         btnRep1.setBackground(new java.awt.Color(0, 204, 255));
         btnRep1.setFont(new java.awt.Font("Trajan Pro", 1, 12)); // NOI18N
@@ -249,7 +254,7 @@ public class frmJogo extends javax.swing.JFrame {
                             .addComponent(PlayName1))
                         .addGap(336, 336, 336)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
+                            .addComponent(PlayName2)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addComponent(lblVida2)))))
@@ -268,7 +273,7 @@ public class frmJogo extends javax.swing.JFrame {
                         .addGap(3, 3, 3)
                         .addComponent(lblVida1))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(PlayName2)
                         .addGap(3, 3, 3)
                         .addComponent(lblVida2)))
                 .addGap(48, 48, 48)
@@ -836,6 +841,7 @@ public class frmJogo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Action1;
     private javax.swing.JLabel PlayName1;
+    private javax.swing.JLabel PlayName2;
     private javax.swing.JLabel Result1;
     private javax.swing.JLabel Result2;
     private javax.swing.JButton btnAtack1;
@@ -846,7 +852,6 @@ public class frmJogo extends javax.swing.JFrame {
     private javax.swing.JButton btnHold2;
     private javax.swing.JButton btnRep1;
     private javax.swing.JButton btnRep2;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
