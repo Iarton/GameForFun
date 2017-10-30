@@ -1,5 +1,5 @@
 # GameForFun
- A little game made by me to undestand better the java GUI and language. The game itself is just 4 random number generators, but i want to improve some aspects, like some new game mode, new combat options and etc.
+ A little game made by me to undestand better the java language and the use of the NetBeans. The game itself is just 4 random number generators, but i want to improve some aspects, like some new game mode, new combat options and etc(mabe even IA).
 
 ## Updates **before** the use of Git:
   * Version 1.0 Release
