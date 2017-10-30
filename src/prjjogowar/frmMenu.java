@@ -38,6 +38,10 @@ public class frmMenu extends javax.swing.JFrame {
         opt = new ClassOpt();
         this.setLocationRelativeTo(null);
         getContentPane().setBackground(Color.ORANGE);
+        opt.setName1("Player 1");
+        opt.setName2("Player 2");
+        opt.setVidaP1(100);
+        opt.setVidaP2(100);
     }
 
     public ClassOpt getOpt() {
@@ -47,7 +51,7 @@ public class frmMenu extends javax.swing.JFrame {
     public void setOpt(ClassOpt opt) {
         this.opt = opt;
     }
-    
+   
     
     
     /**
@@ -138,7 +142,6 @@ public class frmMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         frmOpt MOpt = new frmOpt(opt,this);
-        opt.setName1("Carol");
         MOpt.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnOptActionPerformed
