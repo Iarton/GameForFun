@@ -13,7 +13,6 @@ import javax.swing.JOptionPane;
 import model.ClassOpt;
 import model.FunctionGame;
 
-
 public class frmJogo extends javax.swing.JFrame {
 
     int Life1;
@@ -22,6 +21,7 @@ public class frmJogo extends javax.swing.JFrame {
     String Life1t, Pname1;
     frmMenu menut;
     FunctionGame fg = new FunctionGame();
+
     public frmJogo(ClassOpt opt, frmMenu menut) {
         initComponents();
         setLocationRelativeTo(null);
@@ -65,11 +65,6 @@ public class frmJogo extends javax.swing.JFrame {
         setTitle("WarGame");
         setBackground(new java.awt.Color(102, 204, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                formMouseEntered(evt);
-            }
-        });
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -84,11 +79,6 @@ public class frmJogo extends javax.swing.JFrame {
                 btnAtack1MouseClicked(evt);
             }
         });
-        btnAtack1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtack1ActionPerformed(evt);
-            }
-        });
 
         btnAtack2.setBackground(new java.awt.Color(255, 0, 0));
         btnAtack2.setFont(new java.awt.Font("Trajan Pro", 1, 12)); // NOI18N
@@ -96,11 +86,6 @@ public class frmJogo extends javax.swing.JFrame {
         btnAtack2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAtack2MouseClicked(evt);
-            }
-        });
-        btnAtack2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtack2ActionPerformed(evt);
             }
         });
 
@@ -322,20 +307,19 @@ public class frmJogo extends javax.swing.JFrame {
     private void btnAtack1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAtack1MouseClicked
         // TODO add your handling code here:
         Result r = new Result();
-            int randomNum = r.getrNum();
-            
+        int randomNum = r.getrNum();
+
         action1 = action1 - 2;
         // BOTAO ATACA Playa1 ataca
         this.jLabel7.setText("" + action1);
-        if(action1 < 0)  
-        {
-             
-             Life1 = Life1 - 25;
-             this.Result1.setText("Rebelião!!!(-25 HP)");   
-             this.lblVida1.setText("" + Life1);
-             action1 = 0;
-             pgsVida1.setValue(Life1);
-             this.jLabel7.setText(""+action1);
+        if (action1 < 0) {
+
+            Life1 = Life1 - 25;
+            this.Result1.setText("Rebelião!!!(-25 HP)");
+            this.lblVida1.setText("" + Life1);
+            action1 = 0;
+            pgsVida1.setValue(Life1);
+            this.jLabel7.setText("" + action1);
             btnAtack1.setEnabled(false);
             btnRep1.setEnabled(false);
             btnAtack2.setEnabled(true);
@@ -344,58 +328,53 @@ public class frmJogo extends javax.swing.JFrame {
             btnHold2.setEnabled(true);
             btnCharge1.setEnabled(false);
             btnCharge2.setEnabled(true);
-        if (Life1 <= 0) {
-            JOptionPane.showMessageDialog(null, "O Player 2 Venceu");
-            System.exit(0);
-        }
-        }else{
-            
-        Life2 = Life2 - randomNum;
-        pgsVida2.setValue(Life2);
-        this.lblVida2.setText("" + Life2);
-        //Aki result
-        this.Result1.setText(fg.resultadoAtack(randomNum));
-        
-        if (randomNum == 0) {
-            action2 = action2 + 1;
-            this.jLabel8.setText(""+action2);
-        }
-        System.out.println(+Life2 + ", " + randomNum);
+            if (Life1 <= 0) {
+                JOptionPane.showMessageDialog(null, "O Player 2 Venceu");
+                System.exit(0);
+            }
+        } else {
+
+            Life2 = Life2 - randomNum;
+            pgsVida2.setValue(Life2);
+            this.lblVida2.setText("" + Life2);
+            //Aki result
+            this.Result1.setText(fg.resultadoAtack(randomNum));
+
+            if (randomNum == 0) {
+                action2 = action2 + 1;
+                this.jLabel8.setText("" + action2);
+            }
+            System.out.println(+Life2 + ", " + randomNum);
         }
         if (Life2 <= 0) {
             JOptionPane.showMessageDialog(null, "O Player 1 Venceu");
             System.exit(0);
         }
-            btnAtack1.setEnabled(false);
-            btnRep1.setEnabled(false);
-            btnAtack2.setEnabled(true);
-            btnRep2.setEnabled(true);
-            btnHold1.setEnabled(false);
-            btnHold2.setEnabled(true);
-            btnCharge1.setEnabled(false);
-            btnCharge2.setEnabled(true);
+        btnAtack1.setEnabled(false);
+        btnRep1.setEnabled(false);
+        btnAtack2.setEnabled(true);
+        btnRep2.setEnabled(true);
+        btnHold1.setEnabled(false);
+        btnHold2.setEnabled(true);
+        btnCharge1.setEnabled(false);
+        btnCharge2.setEnabled(true);
 
     }//GEN-LAST:event_btnAtack1MouseClicked
-
-    private void btnAtack2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtack2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAtack2ActionPerformed
 
     private void btnAtack2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAtack2MouseClicked
         // TODO add your handling code here:
         Result r = new Result();
-            int randomNum = r.getrNum();
+        int randomNum = r.getrNum();
         action2 = action2 - 2;
         // BOTAO ATACA Playa2 ataca
         this.jLabel8.setText("" + action2);
-        if(action2 < 0)  
-        {
-             Life2 = Life2 - 25;
-             this.Result2.setText("Rebelião!!!(-25 HP)");   
-             this.lblVida2.setText("" + Life2);
-             action2 = 0;
-             pgsVida2.setValue(Life2);
-             this.jLabel8.setText(""+action2);
+        if (action2 < 0) {
+            Life2 = Life2 - 25;
+            this.Result2.setText("Rebelião!!!(-25 HP)");
+            this.lblVida2.setText("" + Life2);
+            action2 = 0;
+            pgsVida2.setValue(Life2);
+            this.jLabel8.setText("" + action2);
             btnAtack2.setEnabled(false);
             btnRep2.setEnabled(false);
             btnRep1.setEnabled(true);
@@ -405,20 +384,20 @@ public class frmJogo extends javax.swing.JFrame {
             btnCharge1.setEnabled(true);
             btnCharge2.setEnabled(false);
             if (Life2 <= 0) {
-            JOptionPane.showMessageDialog(null, "O Player 1 Venceu");
-            System.exit(0);
-        }
-        }else{
-        Life1 = Life1 - randomNum;
-        pgsVida1.setValue(Life1);
-        this.lblVida1.setText("" + Life1);
-        Result2.setText(fg.resultadoAtack(randomNum));
-       
-        if (randomNum == 0) {
-            action1 = action1 + 1;
-            this.jLabel7.setText(""+action1);
-        }
-        System.out.println(+Life1 + ", " + randomNum);
+                JOptionPane.showMessageDialog(null, "O Player 1 Venceu");
+                System.exit(0);
+            }
+        } else {
+            Life1 = Life1 - randomNum;
+            pgsVida1.setValue(Life1);
+            this.lblVida1.setText("" + Life1);
+            Result2.setText(fg.resultadoAtack(randomNum));
+
+            if (randomNum == 0) {
+                action1 = action1 + 1;
+                this.jLabel7.setText("" + action1);
+            }
+            System.out.println(+Life1 + ", " + randomNum);
         }
 
         if (Life1 <= 0) {
@@ -429,27 +408,26 @@ public class frmJogo extends javax.swing.JFrame {
         btnAtack2.setEnabled(false);
         btnRep2.setEnabled(false);
         btnHold2.setEnabled(false);
-        btnHold1.setEnabled(true);    
+        btnHold1.setEnabled(true);
         btnCharge1.setEnabled(true);
         btnCharge2.setEnabled(false);
     }//GEN-LAST:event_btnAtack2MouseClicked
 
     private void btnRep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRep1ActionPerformed
-         // Repair player1
+        // Repair player1
         int min = -20, max = 50;
         Random rd = new Random();
         int randomNum = rd.nextInt(max - min) + min;
         action1 = action1 - 3;
         this.jLabel7.setText("" + action1);
-        if(action1 < 0)  
-        {
-             Life1 = Life1 - 25;
-             Life2 = Life2 + 25;
-             this.Result1.setText("TRAIÇÃO!!!(You:HP -25, Enemy:HP +25)");   
-             this.lblVida1.setText("" + Life1);
-             this.lblVida2.setText(""+ Life2);
-             action1 = 0;
-             this.jLabel7.setText(""+action1);
+        if (action1 < 0) {
+            Life1 = Life1 - 25;
+            Life2 = Life2 + 25;
+            this.Result1.setText("TRAIÇÃO!!!(You:HP -25, Enemy:HP +25)");
+            this.lblVida1.setText("" + Life1);
+            this.lblVida2.setText("" + Life2);
+            action1 = 0;
+            this.jLabel7.setText("" + action1);
             btnAtack1.setEnabled(false);
             btnRep1.setEnabled(false);
             btnAtack2.setEnabled(true);
@@ -460,22 +438,22 @@ public class frmJogo extends javax.swing.JFrame {
             btnCharge2.setEnabled(true);
             if (Life1 <= 0) {
                 this.Result1.setText("We fail with desonor");
-            JOptionPane.showMessageDialog(null, "O Player 2 Venceu");
-            System.exit(0);
+                JOptionPane.showMessageDialog(null, "O Player 2 Venceu");
+                System.exit(0);
+            }
+        } else {
+            Life1 = Life1 + randomNum;
+            pgsVida1.setValue(Life1);
+
+            this.lblVida1.setText("" + Life1);
+
+            this.Result1.setText(fg.resultRepair(randomNum));
+
+            if (randomNum <= -19 && randomNum >= -20) {
+                action1 = action1 - 1;
+                this.jLabel7.setText("" + action1);
+            }
         }
-        }else{
-        Life1 = Life1 + randomNum;
-        pgsVida1.setValue(Life1);
-        
-        this.lblVida1.setText("" + Life1);
-       
-        this.Result1.setText(fg.resultRepair(randomNum));
-        
-        if (randomNum <= -19 && randomNum >= -20) {
-            action1 = action1 - 1;
-            this.jLabel7.setText(""+action1);
-        }
-          }
         if (Life1 <= 0) {
             JOptionPane.showMessageDialog(null, "O Player 2 Venceu");
             System.exit(0);
@@ -491,22 +469,21 @@ public class frmJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRep1ActionPerformed
 
     private void btnRep2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRep2ActionPerformed
-                // Repair player 2
+        // Repair player 2
         int min = -20, max = 50;
         Random rd = new Random();
         int randomNum = rd.nextInt(max - min) + min;
-        
+
         action2 = action2 - 3;
         this.jLabel8.setText("" + action2);
-         if(action2 < 0)  
-        {
-             Life2 = Life2 - 25;
-             Life1 = Life1 + 25;
-             this.Result2.setText("TRAIÇÃO!!!(You:HP -25, Enemy:HP +25)");   
-             this.lblVida2.setText("" + Life2);
-             this.lblVida1.setText(""+ Life1);
-             action2 = 0;
-             this.jLabel8.setText(""+action2);
+        if (action2 < 0) {
+            Life2 = Life2 - 25;
+            Life1 = Life1 + 25;
+            this.Result2.setText("TRAIÇÃO!!!(You:HP -25, Enemy:HP +25)");
+            this.lblVida2.setText("" + Life2);
+            this.lblVida1.setText("" + Life1);
+            action2 = 0;
+            this.jLabel8.setText("" + action2);
             btnAtack2.setEnabled(false);
             btnRep2.setEnabled(false);
             btnRep1.setEnabled(true);
@@ -516,23 +493,23 @@ public class frmJogo extends javax.swing.JFrame {
             btnCharge1.setEnabled(true);
             btnCharge2.setEnabled(false);
             if (Life2 <= 0) {
-            JOptionPane.showMessageDialog(null, "O Player 1 Venceu");
-            System.exit(0);
+                JOptionPane.showMessageDialog(null, "O Player 1 Venceu");
+                System.exit(0);
+            }
+        } else {
+            this.jLabel8.setText("" + action2);
+
+            Life2 = Life2 + randomNum;
+            pgsVida2.setValue(Life2);
+            this.lblVida2.setText("" + Life2);
+            //aki result
+            this.Result2.setText(fg.resultRepair(randomNum));
+
+            if (randomNum <= -19 && randomNum >= -20) {
+                action2 = action2 - 1;
+                this.jLabel8.setText("" + action2);
+            }
         }
-        }else{
-        this.jLabel8.setText("" + action2);
-        
-        Life2 = Life2 + randomNum;
-        pgsVida2.setValue(Life2);
-        this.lblVida2.setText("" + Life2);
-        //aki result
-       this.Result2.setText(fg.resultRepair(randomNum));
-       
-        if (randomNum <= -19 && randomNum >= -20) {
-            action2 = action2 - 1;
-            this.jLabel8.setText(""+action2);
-        }
-       }
         if (Life2 <= 0) {
             JOptionPane.showMessageDialog(null, "O Player 1 Venceu");
             System.exit(0);
@@ -547,53 +524,48 @@ public class frmJogo extends javax.swing.JFrame {
         btnCharge2.setEnabled(false);
     }//GEN-LAST:event_btnRep2ActionPerformed
 
-    private void btnAtack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtack1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAtack1ActionPerformed
-
     private void btnHold1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHold1ActionPerformed
         // TODO add your handling code here:
         action1 = action1 + 1;
         this.jLabel7.setText("" + action1);
-            btnAtack1.setEnabled(false);
-            btnRep1.setEnabled(false);
-            btnAtack2.setEnabled(true);
-            btnRep2.setEnabled(true);
-            btnHold1.setEnabled(false);
-            btnHold2.setEnabled(true);
-            btnCharge1.setEnabled(false);
-            btnCharge2.setEnabled(true);
+        btnAtack1.setEnabled(false);
+        btnRep1.setEnabled(false);
+        btnAtack2.setEnabled(true);
+        btnRep2.setEnabled(true);
+        btnHold1.setEnabled(false);
+        btnHold2.setEnabled(true);
+        btnCharge1.setEnabled(false);
+        btnCharge2.setEnabled(true);
     }//GEN-LAST:event_btnHold1ActionPerformed
 
     private void btnHold2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHold2ActionPerformed
         // TODO add your handling code here:
         action2 = action2 + 1;
         this.jLabel8.setText("" + action2);
-            btnAtack2.setEnabled(false);
-            btnRep2.setEnabled(false);
-            btnAtack1.setEnabled(true);
-            btnRep1.setEnabled(true);
-            btnHold2.setEnabled(false);
-            btnHold1.setEnabled(true);
-            btnCharge1.setEnabled(true);
-            btnCharge2.setEnabled(false);
+        btnAtack2.setEnabled(false);
+        btnRep2.setEnabled(false);
+        btnAtack1.setEnabled(true);
+        btnRep1.setEnabled(true);
+        btnHold2.setEnabled(false);
+        btnHold1.setEnabled(true);
+        btnCharge1.setEnabled(true);
+        btnCharge2.setEnabled(false);
     }//GEN-LAST:event_btnHold2ActionPerformed
 
     private void btnCharge1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCharge1ActionPerformed
-  //Charge play1
+        //Charge play1
         int minc = 50, maxc = 200;
         action1 = action1 - 8;
-        this.jLabel7.setText(""+action1);
+        this.jLabel7.setText("" + action1);
         Life1 = Life1 - 30;
         pgsVida1.setValue(Life1);
-        this.lblVida1.setText(""+Life1);
-        if(action1 < 0)
-        {
+        this.lblVida1.setText("" + Life1);
+        if (action1 < 0) {
             this.Result1.setText("THEY HAVE BETRAYED US!!!(Enemy AP +4)");
             action2 = action2 + 4;
             action1 = 0;
-             this.jLabel7.setText(""+action1);
-            this.jLabel8.setText(""+action2);
+            this.jLabel7.setText("" + action1);
+            this.jLabel8.setText("" + action2);
             btnAtack1.setEnabled(false);
             btnRep1.setEnabled(false);
             btnAtack2.setEnabled(true);
@@ -602,49 +574,47 @@ public class frmJogo extends javax.swing.JFrame {
             btnHold2.setEnabled(true);
             btnCharge1.setEnabled(false);
             btnCharge2.setEnabled(true);
-        }else{
-            if(Life1 <= 0){
-         JOptionPane.showMessageDialog(null, "O Player 2 Venceu");
-         System.exit(0);
-        }else{
+        } else {
+            if (Life1 <= 0) {
+                JOptionPane.showMessageDialog(null, "O Player 2 Venceu");
+                System.exit(0);
+            } else {
                 Random r = new Random();
                 int randomNum = r.nextInt(maxc - minc) + minc;
                 Life2 = Life2 - randomNum;
                 pgsVida2.setValue(Life2);
-                this.lblVida2.setText(""+Life2);
+                this.lblVida2.setText("" + Life2);
                 this.Result1.setText("FREEDOM!!!!");
-            btnAtack1.setEnabled(false);
-            btnRep1.setEnabled(false);
-            btnAtack2.setEnabled(true);
-            btnRep2.setEnabled(true);
-            btnHold1.setEnabled(false);
-            btnHold2.setEnabled(true);
-            btnCharge1.setEnabled(false);
-            btnCharge2.setEnabled(true);
-            if(Life2 <= 0)
-            {
-                JOptionPane.showMessageDialog(null, "O Player 1 Venceu");
-         System.exit(0);
+                btnAtack1.setEnabled(false);
+                btnRep1.setEnabled(false);
+                btnAtack2.setEnabled(true);
+                btnRep2.setEnabled(true);
+                btnHold1.setEnabled(false);
+                btnHold2.setEnabled(true);
+                btnCharge1.setEnabled(false);
+                btnCharge2.setEnabled(true);
+                if (Life2 <= 0) {
+                    JOptionPane.showMessageDialog(null, "O Player 1 Venceu");
+                    System.exit(0);
+                }
             }
-            }    
         }
     }//GEN-LAST:event_btnCharge1ActionPerformed
 
     private void btnCharge2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCharge2ActionPerformed
         // CHARGE PLAY2
-         int minc = 50, maxc = 200;
+        int minc = 50, maxc = 200;
         action2 = action2 - 8;
-        this.jLabel8.setText(""+action2);
+        this.jLabel8.setText("" + action2);
         Life2 = Life2 - 30;
         pgsVida2.setValue(Life2);
-        this.lblVida2.setText(""+Life2);
-        if(action2 < 0)
-        {
+        this.lblVida2.setText("" + Life2);
+        if (action2 < 0) {
             this.Result2.setText("THEY HAVE BETRAYED US!!!(Enemy AP +4)");
             action1 = action1 + 4;
-            this.jLabel7.setText(""+action1);
+            this.jLabel7.setText("" + action1);
             action2 = 0;
-             this.jLabel8.setText(""+action2);
+            this.jLabel8.setText("" + action2);
             btnAtack2.setEnabled(false);
             btnRep2.setEnabled(false);
             btnRep1.setEnabled(true);
@@ -653,39 +623,34 @@ public class frmJogo extends javax.swing.JFrame {
             btnHold1.setEnabled(true);
             btnCharge2.setEnabled(false);
             btnCharge1.setEnabled(true);
-        }else{
-            if(Life2 <= 0){
-         JOptionPane.showMessageDialog(null, "O Player 1 Venceu");
-         System.exit(0);
-        }else{
+        } else {
+            if (Life2 <= 0) {
+                JOptionPane.showMessageDialog(null, "O Player 1 Venceu");
+                System.exit(0);
+            } else {
                 Random r = new Random();
                 int randomNum = r.nextInt(maxc - minc) + minc;
                 Life1 = Life1 - randomNum;
                 pgsVida1.setValue(Life1);
-                this.lblVida1.setText(""+Life1);
+                this.lblVida1.setText("" + Life1);
                 this.Result2.setText("FREEDOM!!!!");
-            btnAtack2.setEnabled(false);
-            btnRep2.setEnabled(false);
-            btnAtack1.setEnabled(true);
-            btnRep1.setEnabled(true);
-            btnHold2.setEnabled(false);
-            btnHold1.setEnabled(true);
-            btnCharge2.setEnabled(false);
-            btnCharge1.setEnabled(true);
-            if(Life1 <= 0)
-            {
-                JOptionPane.showMessageDialog(null, "O Player 2 Venceu");
-         System.exit(0);
+                btnAtack2.setEnabled(false);
+                btnRep2.setEnabled(false);
+                btnAtack1.setEnabled(true);
+                btnRep1.setEnabled(true);
+                btnHold2.setEnabled(false);
+                btnHold1.setEnabled(true);
+                btnCharge2.setEnabled(false);
+                btnCharge1.setEnabled(true);
+                if (Life1 <= 0) {
+                    JOptionPane.showMessageDialog(null, "O Player 2 Venceu");
+                    System.exit(0);
+                }
             }
-            }    
         }
     }//GEN-LAST:event_btnCharge2ActionPerformed
 
-    private void formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseEntered
-    }//GEN-LAST:event_formMouseEntered
-
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        
         this.dispose();
         menut.setVisible(true);
     }//GEN-LAST:event_formWindowClosing

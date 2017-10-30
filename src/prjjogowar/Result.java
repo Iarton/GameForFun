@@ -22,18 +22,17 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
- 
 /**
  *
  * @author Glaucia
  */
 public class Result {
-    
+
     int hpu;
-     int  min = 0;
-     int  max = 100;
+    int min = 0;
+    int max = 100;
     Random rand = new Random();
-    int rNum = rand.nextInt ((max - min) + min);
+    int rNum = rand.nextInt((max - min) + min);
 
     public int getrNum() {
         return rNum;
@@ -42,12 +41,9 @@ public class Result {
     public void setrNum(int rNum) {
         this.rNum = rNum;
     }
-    public void sethpu(){
+
+    public void sethpu() {
         this.hpu = hpu;
 
     }
 }
-
-       
-
-

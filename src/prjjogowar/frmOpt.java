@@ -8,23 +8,25 @@ package prjjogowar;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import model.ClassOpt;
+
 /**
  *
  * @author Glaucia
  */
 public class frmOpt extends javax.swing.JFrame {
-    
+
     /**
      * Creates new form frmOpt
      */
     ClassOpt opt;
     frmMenu menupr;
+
     public frmOpt(ClassOpt opt, frmMenu menupr) {
         initComponents();
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.LIGHT_GRAY);
         this.opt = opt;
-        this.menupr=menupr;
+        this.menupr = menupr;
     }
 
     /**
@@ -55,9 +57,6 @@ public class frmOpt extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosed(java.awt.event.WindowEvent evt) {
-                formWindowClosed(evt);
-            }
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
             }
@@ -85,39 +84,19 @@ public class frmOpt extends javax.swing.JFrame {
 
         HpPlay1.setText("100");
         HpPlay1.setMargin(new java.awt.Insets(0, 4, 0, 0));
-        HpPlay1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HpPlay1ActionPerformed(evt);
-            }
-        });
         getContentPane().add(HpPlay1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 120, 30));
         HpPlay1.getAccessibleContext().setAccessibleName("NamePlay1");
 
         NamePlay1.setText("Player 1");
         NamePlay1.setMargin(new java.awt.Insets(0, 4, 0, 0));
-        NamePlay1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NamePlay1ActionPerformed(evt);
-            }
-        });
         getContentPane().add(NamePlay1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 120, 30));
 
         HpPlay2.setText("100");
         HpPlay2.setMargin(new java.awt.Insets(0, 4, 0, 0));
-        HpPlay2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HpPlay2ActionPerformed(evt);
-            }
-        });
         getContentPane().add(HpPlay2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 120, 30));
 
         NamePlay2.setText("Player 2");
         NamePlay2.setMargin(new java.awt.Insets(0, 4, 0, 0));
-        NamePlay2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NamePlay2ActionPerformed(evt);
-            }
-        });
         getContentPane().add(NamePlay2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, 120, 30));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -165,38 +144,19 @@ public class frmOpt extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-    }//GEN-LAST:event_formWindowClosed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        menupr.getOpt().setName1(NamePlay1.getText());
+        menupr.getOpt().setVidaP1(Integer.parseInt(HpPlay1.getText()));
+        menupr.getOpt().setName2(NamePlay2.getText());
+        menupr.getOpt().setVidaP2(Integer.parseInt(HpPlay2.getText()));
+        JOptionPane.showMessageDialog(null, "Changes Saved");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
         menupr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_formWindowClosing
-
-    private void HpPlay1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HpPlay1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HpPlay1ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      menupr.getOpt().setName1(NamePlay1.getText());
-      menupr.getOpt().setVidaP1(Integer.parseInt(HpPlay1.getText()));
-      menupr.getOpt().setName2(NamePlay2.getText());
-      menupr.getOpt().setVidaP2(Integer.parseInt(HpPlay2.getText()));
-      JOptionPane.showMessageDialog(null, "Changes Saved");
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void NamePlay1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamePlay1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NamePlay1ActionPerformed
-
-    private void HpPlay2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HpPlay2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HpPlay2ActionPerformed
-
-    private void NamePlay2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamePlay2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NamePlay2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField HpPlay1;

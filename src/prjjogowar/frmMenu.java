@@ -11,19 +11,15 @@ import javax.swing.JFrame;
 import model.ClassOpt;
 
 /**
- * Version 1.0 Release ChangeLog: 1.0: Versão Inicial e lançada 
- * Version 1.1 Add Results, fix bugs
- * Version 1.2 Add Action points system, fix bugs
- * Version 1.3 Improved AP System, fix bugs
- * Version 1.4 Add Charge atack 
- * Version 1.4.1 Windows centralizad
- * Version 1.4.2 Layout Improvement,put more bugs... :c
- * Version 1.4.3 FIX BUGS!!! and now AP never be less than 0
- * Version 1.5 Add Menu, fix bug
- * Version 1.5.1 Improved Results, Improved Atack and Repair, add Hp Bar
- * To Do List:codigo e add novos modos, fix bugs, restart button, option in option
- * Criação de objetos = (nome da Classe) (nome objeto) = new (Mesmo nome da classe ou ja
- * existente na memoria) Exemplo Jogo jg = new Jogo();
+ * Version 1.0 Release ChangeLog: 1.0: Versão Inicial e lançada Version 1.1 Add
+ * Results, fix bugs Version 1.2 Add Action points system, fix bugs Version 1.3
+ * Improved AP System, fix bugs Version 1.4 Add Charge atack Version 1.4.1
+ * Windows centralizad Version 1.4.2 Layout Improvement,put more bugs... :c
+ * Version 1.4.3 FIX BUGS!!! and now AP never be less than 0 Version 1.5 Add
+ * Menu, fix bug Version 1.5.1 Improved Results, Improved Atack and Repair, add
+ * Hp Bar To Do List:codigo e add novos modos, fix bugs, restart button, option
+ * in option Criação de objetos = (nome da Classe) (nome objeto) = new (Mesmo
+ * nome da classe ou ja existente na memoria) Exemplo Jogo jg = new Jogo();
  *
  * @author Abrasil
  */
@@ -33,6 +29,7 @@ public class frmMenu extends javax.swing.JFrame {
      * Creates new form frmMenu
      */
     private ClassOpt opt;
+
     public frmMenu() {
         initComponents();
         opt = new ClassOpt();
@@ -51,9 +48,7 @@ public class frmMenu extends javax.swing.JFrame {
     public void setOpt(ClassOpt opt) {
         this.opt = opt;
     }
-   
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -74,11 +69,6 @@ public class frmMenu extends javax.swing.JFrame {
         setTitle("Menu");
         setBackground(new java.awt.Color(0, 255, 0));
         setResizable(false);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent evt) {
-                formWindowClosing(evt);
-            }
-        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnJogar.setBackground(new java.awt.Color(255, 0, 0));
@@ -128,7 +118,7 @@ public class frmMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJogarActionPerformed
-        frmJogo f = new frmJogo(opt,this);
+        frmJogo f = new frmJogo(opt, this);
         f.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnJogarActionPerformed
@@ -140,16 +130,11 @@ public class frmMenu extends javax.swing.JFrame {
 
     private void btnOptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOptActionPerformed
         // TODO add your handling code here:
-        
-        frmOpt MOpt = new frmOpt(opt,this);
+
+        frmOpt MOpt = new frmOpt(opt, this);
         MOpt.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnOptActionPerformed
-
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
