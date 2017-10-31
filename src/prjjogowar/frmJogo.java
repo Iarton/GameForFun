@@ -320,14 +320,6 @@ public class frmJogo extends javax.swing.JFrame {
             action1 = 0;
             pgsVida1.setValue(Life1);
             this.jLabel7.setText("" + action1);
-            btnAtack1.setEnabled(false);
-            btnRep1.setEnabled(false);
-            btnAtack2.setEnabled(true);
-            btnRep2.setEnabled(true);
-            btnHold1.setEnabled(false);
-            btnHold2.setEnabled(true);
-            btnCharge1.setEnabled(false);
-            btnCharge2.setEnabled(true);
             if (Life1 <= 0) {
                 JOptionPane.showMessageDialog(null, "O Player 2 Venceu");
                 System.exit(0);
@@ -350,14 +342,9 @@ public class frmJogo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "O Player 1 Venceu");
             System.exit(0);
         }
-        btnAtack1.setEnabled(false);
-        btnRep1.setEnabled(false);
-        btnAtack2.setEnabled(true);
-        btnRep2.setEnabled(true);
-        btnHold1.setEnabled(false);
-        btnHold2.setEnabled(true);
-        btnCharge1.setEnabled(false);
-        btnCharge2.setEnabled(true);
+        
+        fg.disabler(btnAtack1,btnRep1, btnHold1,btnCharge1);
+        fg.enabler(btnAtack2,btnRep2, btnHold2,btnCharge2);
 
     }//GEN-LAST:event_btnAtack1MouseClicked
 
@@ -375,14 +362,6 @@ public class frmJogo extends javax.swing.JFrame {
             action2 = 0;
             pgsVida2.setValue(Life2);
             this.jLabel8.setText("" + action2);
-            btnAtack2.setEnabled(false);
-            btnRep2.setEnabled(false);
-            btnRep1.setEnabled(true);
-            btnAtack1.setEnabled(true);
-            btnHold2.setEnabled(false);
-            btnHold1.setEnabled(true);
-            btnCharge1.setEnabled(true);
-            btnCharge2.setEnabled(false);
             if (Life2 <= 0) {
                 JOptionPane.showMessageDialog(null, "O Player 1 Venceu");
                 System.exit(0);
@@ -403,14 +382,9 @@ public class frmJogo extends javax.swing.JFrame {
         if (Life1 <= 0) {
             JOptionPane.showMessageDialog(null, "O Player 2 Venceu");
         }
-        btnAtack1.setEnabled(true);
-        btnRep1.setEnabled(true);
-        btnAtack2.setEnabled(false);
-        btnRep2.setEnabled(false);
-        btnHold2.setEnabled(false);
-        btnHold1.setEnabled(true);
-        btnCharge1.setEnabled(true);
-        btnCharge2.setEnabled(false);
+        
+        fg.enabler(btnAtack1,btnRep1, btnHold1,btnCharge1);
+        fg.disabler(btnAtack2,btnRep2, btnHold2,btnCharge2);
     }//GEN-LAST:event_btnAtack2MouseClicked
 
     private void btnRep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRep1ActionPerformed
@@ -428,14 +402,6 @@ public class frmJogo extends javax.swing.JFrame {
             this.lblVida2.setText("" + Life2);
             action1 = 0;
             this.jLabel7.setText("" + action1);
-            btnAtack1.setEnabled(false);
-            btnRep1.setEnabled(false);
-            btnAtack2.setEnabled(true);
-            btnRep2.setEnabled(true);
-            btnHold1.setEnabled(false);
-            btnHold2.setEnabled(true);
-            btnCharge1.setEnabled(false);
-            btnCharge2.setEnabled(true);
             if (Life1 <= 0) {
                 this.Result1.setText("We fail with desonor");
                 JOptionPane.showMessageDialog(null, "O Player 2 Venceu");
@@ -458,14 +424,8 @@ public class frmJogo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "O Player 2 Venceu");
             System.exit(0);
         }
-        btnAtack1.setEnabled(false);
-        btnRep1.setEnabled(false);
-        btnAtack2.setEnabled(true);
-        btnRep2.setEnabled(true);
-        btnHold1.setEnabled(false);
-        btnHold2.setEnabled(true);
-        btnCharge1.setEnabled(false);
-        btnCharge2.setEnabled(true);
+        fg.disabler(btnAtack1,btnRep1, btnHold1,btnCharge1);
+        fg.enabler(btnAtack2,btnRep2, btnHold2,btnCharge2);
     }//GEN-LAST:event_btnRep1ActionPerformed
 
     private void btnRep2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRep2ActionPerformed
@@ -484,14 +444,6 @@ public class frmJogo extends javax.swing.JFrame {
             this.lblVida1.setText("" + Life1);
             action2 = 0;
             this.jLabel8.setText("" + action2);
-            btnAtack2.setEnabled(false);
-            btnRep2.setEnabled(false);
-            btnRep1.setEnabled(true);
-            btnAtack1.setEnabled(true);
-            btnHold2.setEnabled(false);
-            btnHold1.setEnabled(true);
-            btnCharge1.setEnabled(true);
-            btnCharge2.setEnabled(false);
             if (Life2 <= 0) {
                 JOptionPane.showMessageDialog(null, "O Player 1 Venceu");
                 System.exit(0);
@@ -514,42 +466,29 @@ public class frmJogo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "O Player 1 Venceu");
             System.exit(0);
         }
-        btnAtack1.setEnabled(true);
-        btnRep1.setEnabled(true);
-        btnAtack2.setEnabled(false);
-        btnRep2.setEnabled(false);
-        btnHold2.setEnabled(false);
-        btnHold1.setEnabled(true);
-        btnCharge1.setEnabled(true);
-        btnCharge2.setEnabled(false);
+        
+        fg.enabler(btnAtack1,btnRep1, btnHold1,btnCharge1);
+        fg.disabler(btnAtack2,btnRep2, btnHold2,btnCharge2);
     }//GEN-LAST:event_btnRep2ActionPerformed
 
     private void btnHold1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHold1ActionPerformed
         // TODO add your handling code here:
         action1 = action1 + 1;
         this.jLabel7.setText("" + action1);
-        btnAtack1.setEnabled(false);
-        btnRep1.setEnabled(false);
-        btnAtack2.setEnabled(true);
-        btnRep2.setEnabled(true);
-        btnHold1.setEnabled(false);
-        btnHold2.setEnabled(true);
-        btnCharge1.setEnabled(false);
-        btnCharge2.setEnabled(true);
+        
+        
+        fg.disabler(btnAtack1,btnRep1, btnHold1,btnCharge1);
+        fg.enabler(btnAtack2,btnRep2, btnHold2,btnCharge2);
     }//GEN-LAST:event_btnHold1ActionPerformed
 
     private void btnHold2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHold2ActionPerformed
         // TODO add your handling code here:
         action2 = action2 + 1;
         this.jLabel8.setText("" + action2);
-        btnAtack2.setEnabled(false);
-        btnRep2.setEnabled(false);
-        btnAtack1.setEnabled(true);
-        btnRep1.setEnabled(true);
-        btnHold2.setEnabled(false);
-        btnHold1.setEnabled(true);
-        btnCharge1.setEnabled(true);
-        btnCharge2.setEnabled(false);
+        
+        fg.enabler(btnAtack1,btnRep1, btnHold1,btnCharge1);
+        fg.disabler(btnAtack2,btnRep2, btnHold2,btnCharge2);
+        
     }//GEN-LAST:event_btnHold2ActionPerformed
 
     private void btnCharge1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCharge1ActionPerformed
@@ -566,14 +505,6 @@ public class frmJogo extends javax.swing.JFrame {
             action1 = 0;
             this.jLabel7.setText("" + action1);
             this.jLabel8.setText("" + action2);
-            btnAtack1.setEnabled(false);
-            btnRep1.setEnabled(false);
-            btnAtack2.setEnabled(true);
-            btnRep2.setEnabled(true);
-            btnHold1.setEnabled(false);
-            btnHold2.setEnabled(true);
-            btnCharge1.setEnabled(false);
-            btnCharge2.setEnabled(true);
         } else {
             if (Life1 <= 0) {
                 JOptionPane.showMessageDialog(null, "O Player 2 Venceu");
@@ -585,20 +516,15 @@ public class frmJogo extends javax.swing.JFrame {
                 pgsVida2.setValue(Life2);
                 this.lblVida2.setText("" + Life2);
                 this.Result1.setText("FREEDOM!!!!");
-                btnAtack1.setEnabled(false);
-                btnRep1.setEnabled(false);
-                btnAtack2.setEnabled(true);
-                btnRep2.setEnabled(true);
-                btnHold1.setEnabled(false);
-                btnHold2.setEnabled(true);
-                btnCharge1.setEnabled(false);
-                btnCharge2.setEnabled(true);
                 if (Life2 <= 0) {
                     JOptionPane.showMessageDialog(null, "O Player 1 Venceu");
                     System.exit(0);
                 }
             }
         }
+        
+        fg.disabler(btnAtack1,btnRep1, btnHold1,btnCharge1);
+        fg.enabler(btnAtack2,btnRep2, btnHold2,btnCharge2);
     }//GEN-LAST:event_btnCharge1ActionPerformed
 
     private void btnCharge2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCharge2ActionPerformed
@@ -615,14 +541,6 @@ public class frmJogo extends javax.swing.JFrame {
             this.jLabel7.setText("" + action1);
             action2 = 0;
             this.jLabel8.setText("" + action2);
-            btnAtack2.setEnabled(false);
-            btnRep2.setEnabled(false);
-            btnRep1.setEnabled(true);
-            btnAtack1.setEnabled(true);
-            btnHold2.setEnabled(false);
-            btnHold1.setEnabled(true);
-            btnCharge2.setEnabled(false);
-            btnCharge1.setEnabled(true);
         } else {
             if (Life2 <= 0) {
                 JOptionPane.showMessageDialog(null, "O Player 1 Venceu");
@@ -634,20 +552,15 @@ public class frmJogo extends javax.swing.JFrame {
                 pgsVida1.setValue(Life1);
                 this.lblVida1.setText("" + Life1);
                 this.Result2.setText("FREEDOM!!!!");
-                btnAtack2.setEnabled(false);
-                btnRep2.setEnabled(false);
-                btnAtack1.setEnabled(true);
-                btnRep1.setEnabled(true);
-                btnHold2.setEnabled(false);
-                btnHold1.setEnabled(true);
-                btnCharge2.setEnabled(false);
-                btnCharge1.setEnabled(true);
                 if (Life1 <= 0) {
                     JOptionPane.showMessageDialog(null, "O Player 2 Venceu");
                     System.exit(0);
                 }
             }
         }
+        
+        fg.enabler(btnAtack1,btnRep1, btnHold1,btnCharge1);
+        fg.disabler(btnAtack2,btnRep2, btnHold2,btnCharge2);
     }//GEN-LAST:event_btnCharge2ActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
@@ -712,12 +625,4 @@ public class frmJogo extends javax.swing.JFrame {
     private javax.swing.JProgressBar pgsVida1;
     private javax.swing.JProgressBar pgsVida2;
     // End of variables declaration//GEN-END:variables
-
-    private Object getclass(JLabel Action2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void dispose(int DISPOSE_ON_CLOSE) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

@@ -5,6 +5,8 @@
  */
 package model;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Pc
@@ -57,5 +59,18 @@ public class FunctionGame {
         } else {
             return ("Shit Goes Down(AP -1)");
         }
+    }
+    public void enabler(JButton ae,JButton re,JButton he, JButton ce){
+        ae.setEnabled(true);
+        re.setEnabled(true);
+        he.setEnabled(true);
+        ce.setEnabled(true);
+    }
+    
+    public void disabler(JButton as,JButton rs,JButton hs, JButton cs){
+        as.setEnabled(false);
+        rs.setEnabled(false);
+        hs.setEnabled(false);
+        cs.setEnabled(false);
     }
 }
