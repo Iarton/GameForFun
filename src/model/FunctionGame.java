@@ -66,7 +66,7 @@ public class FunctionGame {
         cs.setEnabled(false);
     }
     
-    public int randomGen(int max, int min) {
+    public int randomGen(int min, int max) {
         Random rand = new Random();
         return (rand.nextInt((max - min) + min));
     }
