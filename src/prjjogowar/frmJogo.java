@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package prjjogowar;
 
 import java.awt.Color;
@@ -305,12 +300,10 @@ public class frmJogo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAtack1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAtack1MouseClicked
-        // TODO add your handling code here:
         Result r = new Result();
         int randomNum = r.getrNum();
 
         action1 = action1 - 2;
-        // BOTAO ATACA Playa1 ataca
         this.jLabel7.setText("" + action1);
         if (action1 < 0) {
 
@@ -329,7 +322,6 @@ public class frmJogo extends javax.swing.JFrame {
             Life2 = Life2 - randomNum;
             pgsVida2.setValue(Life2);
             this.lblVida2.setText("" + Life2);
-            //Aki result
             this.Result1.setText(fg.resultadoAtack(randomNum));
 
             if (randomNum == 0) {
@@ -349,11 +341,9 @@ public class frmJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAtack1MouseClicked
 
     private void btnAtack2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAtack2MouseClicked
-        // TODO add your handling code here:
         Result r = new Result();
         int randomNum = r.getrNum();
         action2 = action2 - 2;
-        // BOTAO ATACA Playa2 ataca
         this.jLabel8.setText("" + action2);
         if (action2 < 0) {
             Life2 = Life2 - 25;
@@ -388,7 +378,6 @@ public class frmJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAtack2MouseClicked
 
     private void btnRep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRep1ActionPerformed
-        // Repair player1
         int min = -20, max = 50;
         Random rd = new Random();
         int randomNum = rd.nextInt(max - min) + min;
@@ -429,7 +418,6 @@ public class frmJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRep1ActionPerformed
 
     private void btnRep2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRep2ActionPerformed
-        // Repair player 2
         int min = -20, max = 50;
         Random rd = new Random();
         int randomNum = rd.nextInt(max - min) + min;
@@ -454,7 +442,6 @@ public class frmJogo extends javax.swing.JFrame {
             Life2 = Life2 + randomNum;
             pgsVida2.setValue(Life2);
             this.lblVida2.setText("" + Life2);
-            //aki result
             this.Result2.setText(fg.resultRepair(randomNum));
 
             if (randomNum <= -19 && randomNum >= -20) {
@@ -568,11 +555,7 @@ public class frmJogo extends javax.swing.JFrame {
         menut.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -595,7 +578,6 @@ public class frmJogo extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
             }
