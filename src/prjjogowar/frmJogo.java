@@ -459,7 +459,6 @@ public class frmJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRep2ActionPerformed
 
     private void btnHold1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHold1ActionPerformed
-        // TODO add your handling code here:
         action1 = action1 + 1;
         this.jLabel7.setText("" + action1);
         
@@ -479,7 +478,6 @@ public class frmJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHold2ActionPerformed
 
     private void btnCharge1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCharge1ActionPerformed
-        //Charge play1
         int minc = 50, maxc = 200;
         action1 = action1 - 8;
         this.jLabel7.setText("" + action1);
@@ -515,7 +513,6 @@ public class frmJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCharge1ActionPerformed
 
     private void btnCharge2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCharge2ActionPerformed
-        // CHARGE PLAY2
         int minc = 50, maxc = 200;
         action2 = action2 - 8;
         this.jLabel8.setText("" + action2);
