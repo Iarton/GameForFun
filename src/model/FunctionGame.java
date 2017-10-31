@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Random;
 import javax.swing.JButton;
 
 public class FunctionGame {
@@ -63,5 +64,10 @@ public class FunctionGame {
         rs.setEnabled(false);
         hs.setEnabled(false);
         cs.setEnabled(false);
+    }
+    
+    public int randomGen(int max, int min) {
+        Random rand = new Random();
+        return (rand.nextInt((max - min) + min));
     }
 }

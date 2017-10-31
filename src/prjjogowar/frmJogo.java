@@ -1,9 +1,7 @@
 package prjjogowar;
 
 import java.awt.Color;
-import java.awt.SystemColor;
 import java.util.Random;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import model.ClassOpt;
 import model.FunctionGame;
@@ -300,8 +298,7 @@ public class frmJogo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAtack1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAtack1MouseClicked
-        Result r = new Result();
-        int randomNum = r.getrNum();
+        int randomNum = fg.randomGen(0, 100);
 
         action1 = action1 - 2;
         this.jLabel7.setText("" + action1);
@@ -341,8 +338,7 @@ public class frmJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAtack1MouseClicked
 
     private void btnAtack2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAtack2MouseClicked
-        Result r = new Result();
-        int randomNum = r.getrNum();
+        int randomNum = fg.randomGen(0, 100);
         action2 = action2 - 2;
         this.jLabel8.setText("" + action2);
         if (action2 < 0) {
@@ -378,9 +374,7 @@ public class frmJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAtack2MouseClicked
 
     private void btnRep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRep1ActionPerformed
-        int min = -20, max = 50;
-        Random rd = new Random();
-        int randomNum = rd.nextInt(max - min) + min;
+        int randomNum = fg.randomGen(-20, 50);
         action1 = action1 - 3;
         this.jLabel7.setText("" + action1);
         if (action1 < 0) {
@@ -418,9 +412,7 @@ public class frmJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRep1ActionPerformed
 
     private void btnRep2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRep2ActionPerformed
-        int min = -20, max = 50;
-        Random rd = new Random();
-        int randomNum = rd.nextInt(max - min) + min;
+        int randomNum = fg.randomGen(-20, 50);
 
         action2 = action2 - 3;
         this.jLabel8.setText("" + action2);
@@ -478,7 +470,6 @@ public class frmJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHold2ActionPerformed
 
     private void btnCharge1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCharge1ActionPerformed
-        int minc = 50, maxc = 200;
         action1 = action1 - 8;
         this.jLabel7.setText("" + action1);
         Life1 = Life1 - 30;
@@ -496,7 +487,7 @@ public class frmJogo extends javax.swing.JFrame {
                 System.exit(0);
             } else {
                 Random r = new Random();
-                int randomNum = r.nextInt(maxc - minc) + minc;
+                int randomNum = fg.randomGen(50, 200);
                 Life2 = Life2 - randomNum;
                 pgsVida2.setValue(Life2);
                 this.lblVida2.setText("" + Life2);
@@ -513,7 +504,6 @@ public class frmJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCharge1ActionPerformed
 
     private void btnCharge2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCharge2ActionPerformed
-        int minc = 50, maxc = 200;
         action2 = action2 - 8;
         this.jLabel8.setText("" + action2);
         Life2 = Life2 - 30;
@@ -531,7 +521,7 @@ public class frmJogo extends javax.swing.JFrame {
                 System.exit(0);
             } else {
                 Random r = new Random();
-                int randomNum = r.nextInt(maxc - minc) + minc;
+                int randomNum = fg.randomGen(50, 200);
                 Life1 = Life1 - randomNum;
                 pgsVida1.setValue(Life1);
                 this.lblVida1.setText("" + Life1);
@@ -574,11 +564,6 @@ public class frmJogo extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(frmJogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
