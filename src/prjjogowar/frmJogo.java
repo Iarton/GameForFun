@@ -486,7 +486,6 @@ public class frmJogo extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "O Player 2 Venceu");
                 System.exit(0);
             } else {
-                Random r = new Random();
                 int randomNum = fg.randomGen(50, 200);
                 Life2 = Life2 - randomNum;
                 pgsVida2.setValue(Life2);
@@ -520,7 +519,6 @@ public class frmJogo extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "O Player 1 Venceu");
                 System.exit(0);
             } else {
-                Random r = new Random();
                 int randomNum = fg.randomGen(50, 200);
                 Life1 = Life1 - randomNum;
                 pgsVida1.setValue(Life1);
