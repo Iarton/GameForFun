@@ -49,7 +49,7 @@ public class FunctionGame {
         } else if (n <= -10 && n >= -18) {
             return ("Acidental Explosion");
         } else {
-            return ("Shit Goes Down(AP -1)");
+            return ("Shit Goes Down (AP -1)");
         }
     }
     public void enabler(JButton ae,JButton re,JButton he, JButton ce){
