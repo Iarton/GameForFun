@@ -6,6 +6,8 @@ public class ClassOpt {
     private String name1;
     private int VidaP2;
     private String name2;
+    private int ApP1;
+    private int ApP2;
 
     public int getVidaP2() {
         return VidaP2;
@@ -37,5 +39,22 @@ public class ClassOpt {
 
     public void setVidaP1(int VidaP1) {
         this.VidaP1 = VidaP1;
-    }  
+    }
+
+    public int getApP1() {
+        return ApP1;
+    }
+
+    public void setApP1(int ApP1) {
+        this.ApP1 = ApP1;
+    }
+
+    public int getApP2() {
+        return ApP2;
+    }
+
+    public void setApP2(int ApP2) {
+        this.ApP2 = ApP2;
+    }
+    
 }

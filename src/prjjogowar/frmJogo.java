@@ -26,6 +26,10 @@ public class frmJogo extends javax.swing.JFrame {
         Life2 = (menut.getOpt().getVidaP2());
         lblVida1.setText(String.valueOf(Life1));
         lblVida2.setText(String.valueOf(Life2));
+        action1 = (menut.getOpt().getApP1());
+        action2 = (menut.getOpt().getApP2());
+        jLabel7.setText(String.valueOf(action1));
+        jLabel8.setText(String.valueOf(action2));
     }
 
     @SuppressWarnings("unchecked")
