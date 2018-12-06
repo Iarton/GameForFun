@@ -19,6 +19,8 @@ public class frmMenu extends javax.swing.JFrame {
         opt.setName2("Player 2");
         opt.setVidaP1(100);
         opt.setVidaP2(100);
+        opt.setApP1(5);
+        opt.setApP2(5);
     }
 
     public ClassOpt getOpt() {
