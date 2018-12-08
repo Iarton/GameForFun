@@ -1,4 +1,4 @@
-package prjjogowar;
+package view;
 
 import java.awt.Color;
 import java.util.Random;

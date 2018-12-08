@@ -1,4 +1,4 @@
-package prjjogowar;
+package view;
 
 import java.awt.Color;
 import static java.awt.SystemColor.menu;
